@@ -1,8 +1,10 @@
 package cosasSueltas;
 
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,22 +19,29 @@ public class CierreVentana {
 			System.exit(0);
 		}
 	}
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		
 		JFrame frame = new JFrame("Ventana con cierre");
-		
-		//frame.addWindowListener(new EscuchadorVentanaAdaptado());
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addWindowListener(new EscuchadoraInterna());
 		
 		JPanel panel = new JPanel();
 		
-		JLabel label = new JLabel("Etiqueta en ventana con escuchadores");
 		
+		
+		JLabel label = new JLabel("Etiqueta en ventana con escuchadores");
 		panel.add(label);
+		
+		JButton jbtn = new JButton("Pulsa aquí");
+		jbtn.setActionCommand("1");
+		panel.add(jbtn);
+		
+		jbtn.addActionListener(new EscuchadoraBoton());
+		
 		
 		frame.getContentPane().add(panel);
 		
