@@ -57,8 +57,8 @@ public class EjemploTextField {
 			@Override
 			public void caretUpdate(CaretEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println(e.getDot());
-		        System.out.println(e.getMark());
+				System.out.println(e.getDot()); //Posición actual del cursor
+		        System.out.println(e.getMark()); //Posición del otro extremo del texto seleccionado
 			}
 		
 		
