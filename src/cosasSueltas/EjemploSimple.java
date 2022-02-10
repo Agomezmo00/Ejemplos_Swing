@@ -5,24 +5,27 @@ import java.awt.*;
 import javax.swing.*;
 
 public class EjemploSimple {
-   private JFrame f = new JFrame("Basic GUI"); // create Frame
-   int pressed = 0; // tracks number of button presses.
-   JLabel label1 = new JLabel("You have pressed button " + pressed + "times.");
-   private JButton start = new JButton("Click To Start!");
+	
+	
+   private JFrame f = new JFrame("Ejemplo de label dinámica"); // create Frame
+   int pulsaciones = 0; //Número de veces que se ha pulsado el botón
+   JLabel label1 = new JLabel("Has pulsado 0 veces");
+   private JButton boton = new JButton("Clic para empezar!");
 
    public EjemploSimple() {
-      // Setup Main Frame
+	  //Marco principal
       f.getContentPane().setLayout(new GridLayout(0, 1));
-      start.addActionListener(new ActionListener() {
+      boton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
-            calculate();
+            actualizaTextoLabel();
          }
       });
+      
       // Add components
       f.add(label1);
-      f.add(start);
-      // Allows the Swing App to be closed
-      f.addWindowListener(new ListenCloseWdw());
+      f.add(boton);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      
    }
 
    public class ListenMenuQuit implements ActionListener {
@@ -49,12 +52,10 @@ public class EjemploSimple {
      es.launchFrame();
    }
 
-   public void calculate() {
-	   
-	   
-      pressed++;
-      System.out.println(pressed);
-      label1.setText("Has pulsado "+pressed+" veces");
+   public void actualizaTextoLabel() {
+      pulsaciones++;
+      System.out.println(pulsaciones);
+      label1.setText("Has pulsado "+pulsaciones+" veces");
       f.repaint();
    }
 }
