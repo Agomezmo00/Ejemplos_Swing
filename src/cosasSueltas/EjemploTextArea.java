@@ -1,10 +1,12 @@
 package cosasSueltas;
 
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
@@ -18,8 +20,11 @@ public class EjemploTextArea {
 				JFrame frame = new JFrame("Ejemplo JTextArea");
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
+				
+				
 				 
 				Container contenedor = frame.getContentPane();
+				
 				//El layout por defecto de JFrame es BorderLayout, pero prefiero flow para este caso
 				contenedor.setLayout(new FlowLayout());
 				
@@ -27,8 +32,14 @@ public class EjemploTextArea {
 				contenedor.add(comentarios);
 				
 				
-				JTextArea textoLargo = new JTextArea();
-				contenedor.add(textoLargo);
+				JTextArea textoLargo = new JTextArea(15, 30);
+				JScrollPane scroll = new JScrollPane(textoLargo);
+				
+				
+				
+				
+				
+				contenedor.add(scroll);
 				
 				
 				
