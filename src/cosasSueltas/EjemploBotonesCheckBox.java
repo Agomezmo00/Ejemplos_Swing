@@ -27,9 +27,7 @@ public class EjemploBotonesCheckBox {
 		panel.setLayout(boxlayout);
 		panel.setBorder(new EmptyBorder(new Insets(50,100,50,100)));
 		
-		/*
-		 * https://java-demos.blogspot.com/2012/10/using-serialization-on-jcheckbox.html
-		 * */
+		
 		JLabel LblEligeDeportesFavoritos = new JLabel("Elige tus deportes favoritos");
 		JCheckBox baloncesto = new JCheckBox("Baloncesto");
 		JCheckBox esqui = new JCheckBox("Esqui");
